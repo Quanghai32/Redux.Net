@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Redux.Net
 {
-    public partial class MainForm : Form
+    public partial class SubcribeForm : Form
     {
-        public MainForm()
+        public SubcribeForm()
         {
             InitializeComponent();
-            SubcribeForm sForm = new SubcribeForm();
-            sForm.Show();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
             RootStore.CounterStore.Subscribe(counter => labelCounter.Text = counter.ToString());
         }
 
